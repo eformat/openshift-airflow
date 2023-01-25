@@ -51,6 +51,7 @@ Add the following helm chart repo.
 
 ```bash
 helm repo add eformat https://eformat.github.io/helm-charts
+helm repo up eformat
 ```
 
 Deploy Airflow to OpenShift. Set your DAG repo and sync time in (seconds) as variables.
