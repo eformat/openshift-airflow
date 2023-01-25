@@ -50,10 +50,11 @@ EOF
 Deploy Airflow and set your DAG repo and sync time (seconds):
 
 ```bash
-helm upgrade --install chart/airflow \
+helm upgrade --install eformat/airflow \
   --set gitSync.repo="https://github.com/${GITHUB_USER}/your-dags-repo.git" \
   --set gitSync.branch="main" \
-  --set gitSync.wait="10"
+  --set gitSync.wait="10" \
+  --namespace airflow
 ```
 
 All going well you should see the following pods running.
