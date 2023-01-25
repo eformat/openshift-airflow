@@ -20,7 +20,7 @@ make push
 
 ## Create a DAG Repo
 
-To deploy with the default configuration, you will need a git repository to store DAG's in. By default the Airflow pods use a ubi based fork of Google's golang [git-sync](https://github.com/eformat/git-sync).
+To deploy with the default configuration, you will need a git repository to store DAG's in. By default the Airflow pods use a ubi based fork of Kubernetes golang based [git-sync](https://github.com/eformat/git-sync) container.
 
 For example, create a private DAG repo in Github. Create a new project and the following secret in the OpenShift cluster you are about to deploy to prior to installing the Airflow helm chart.
 
