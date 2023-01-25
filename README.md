@@ -47,7 +47,13 @@ EOF
 
 ### Deploying to OpenShift using helm
 
-Deploy Airflow to OpenShift. Set your DAG repo and sync time n (seconds) as variables.
+Add the following helm chart repo.
+
+```bash
+helm repo add eformat https://eformat.github.io/helm-charts
+```
+
+Deploy Airflow to OpenShift. Set your DAG repo and sync time in (seconds) as variables.
 
 ```bash
 helm upgrade --install airflow \
@@ -57,6 +63,8 @@ helm upgrade --install airflow \
   --namespace airflow \
    eformat/airflow
 ```
+
+The helm chart source code is in this repo under "chart/airflow" directory if you want to deploy from there instead of the "eformat/airflow" chart repo.
 
 All going well you should see the following pods running.
 
