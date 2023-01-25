@@ -22,7 +22,7 @@ make push
 
 To deploy with the default configuration, you will need a git repository to store DAG's in. By default the Airflow pods use a ubi based fork of Kubernetes golang based [git-sync](https://github.com/eformat/git-sync) container.
 
-For example, create a private DAG repo in Github. Create a new project and the following secret in the OpenShift cluster you are about to deploy to prior to installing the Airflow helm chart.
+For example, create a private DAG repo in Github. Create a new project in OpenShift. Add the following secret prior to installing the Airflow helm chart.
 
 ```bash
 oc new-project airflow
@@ -47,14 +47,15 @@ EOF
 
 ### Deploying to OpenShift using helm
 
-Deploy Airflow and set your DAG repo and sync time (seconds):
+Deploy Airflow to OpenShift. Set your DAG repo and sync time n (seconds) as variables.
 
 ```bash
-helm upgrade --install eformat/airflow \
+helm upgrade --install airflow \
   --set gitSync.repo="https://github.com/${GITHUB_USER}/your-dags-repo.git" \
   --set gitSync.branch="main" \
   --set gitSync.wait="10" \
-  --namespace airflow
+  --namespace airflow \
+   eformat/airflow
 ```
 
 All going well you should see the following pods running.
