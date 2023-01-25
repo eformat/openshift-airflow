@@ -10,8 +10,6 @@ AIRFLOW_RUNNER_IMG := $(REPOSITORY)/airflow-runner:$(AIRFLOW_VERSION)
 AIRFLOW_SCHEDULER_IMG := $(REPOSITORY)/airflow-scheduler:$(AIRFLOW_VERSION)
 AIRFLOW_WEB_IMG := $(REPOSITORY)/airflow-web:$(AIRFLOW_VERSION)
 AIRFLOW_WORKER_IMG := $(REPOSITORY)/airflow-worker:$(AIRFLOW_VERSION)
-S2I_ELYRA_TAG ?= v0.1.3
-S2I_ELYRA_IMG ?= quay.io/thoth-station/s2i-lab-elyra:$(S2I_ELYRA_TAG)
 
 podman-login:
 	@podman login -u $(DOCKER_USER) -p $(DOCKER_PASSWORD) $(REGISTRY)

@@ -106,6 +106,7 @@ The configuration supports OAUTH against common tools like Keycloak/RedHat SSO c
 
 - `webserver_config.py` Airflow Web configuration - [chart/airflow/templates/configmap.yaml](chart/airflow/templates/configmap.yaml)
 - `service-accounts.yaml` Enable the **OAuthRedirectReference** for the service account if you have configured SSO onto OpenShift via Keycloak in - [chart/airflow/templates/service-accounts.yaml](chart/airflow/templates/service-accounts.yaml)
+- `keycloak-example-client.yaml` Example Keycloak client
 
 If you wish to create images suitable for disconnected installation, override:
 
