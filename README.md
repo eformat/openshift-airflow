@@ -64,9 +64,11 @@ Browse to Airflow using the created route. The default Airflow Role is set to `A
 
 ![airflow-empty.png](images/airflow-empty.png)
 
-## Other Configuration
+## Other Configurations
 
-Helm deploys the applications and configures the k8s secrets. We set some random default values that you should override for anything other than testing - see [chart/airflow/templates/secrets.yaml](chart/airflow/templates/secrets.yaml)
+Helm deploys the applications and configures the k8s secrets. Check the chart [chart/airflow/values.yaml](chart/airflow/values.yaml) file for all the options.
+
+We set some random default values that you should override for anything other than testing - see [chart/airflow/templates/secrets.yaml](chart/airflow/templates/secrets.yaml)
 
 The default random values are:
 
@@ -93,3 +95,10 @@ The configuration supports OAUTH against common tools like Keycloak/RedHat SSO c
 
 - `webserver_config.py` Airflow Web configuration - [chart/airflow/templates/configmap.yaml](chart/airflow/templates/configmap.yaml)
 - `service-accounts.yaml` Enable the **OAuthRedirectReference** for the service account if you have configured SSO onto OpenShift via Keycloak in - [chart/airflow/templates/service-accounts.yaml](chart/airflow/templates/service-accounts.yaml)
+
+If you wish to create images suitable for disconnected installation, override:
+
+- [base/pip.conf](base/pip.conf) to set a custom pypi repository
+- [base/cacerts.pem](base/cacerts.pem) to set custom TLS CA certificates
+
+The `airflow-runner` image is highly customizable. The example image is used for Airflow pipelines configured using [elyra](https://github.com/elyra-ai/elyra/blob/main/docs/source/recipes/configure-airflow-as-a-runtime.md).
