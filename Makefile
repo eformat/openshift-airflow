@@ -2,8 +2,8 @@
 REGISTRY ?= quay.io
 REPOSITORY ?= $(REGISTRY)/eformat
 
-AIRFLOW_VERSION ?= 2.3.2
-PYTHON_TAG ?= 1-104
+AIRFLOW_VERSION ?= 2.5.1
+PYTHON_TAG ?= 1-117.1674497496
 PYTHON_IMG ?= registry.access.redhat.com/ubi8/python-38:$(PYTHON_TAG)
 AIRFLOW_BASE_IMG := localhost/airflow-base:latest
 AIRFLOW_RUNNER_IMG := $(REPOSITORY)/airflow-runner:$(AIRFLOW_VERSION)

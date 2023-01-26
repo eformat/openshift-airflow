@@ -62,7 +62,7 @@ helm upgrade --install airflow \
   --set gitSync.branch="main" \
   --set gitSync.wait="10" \
   --namespace airflow \
-   eformat/airflow
+  eformat/airflow
 ```
 
 The helm chart source code is in this repo under "chart/airflow" directory if you want to deploy from there instead of the "eformat/airflow" chart repo.
