@@ -2,8 +2,8 @@ apiVersion: v2
 name: airflow
 description: A Helm chart for Airflow on Kubernetes
 type: application
-version: 0.0.1
-appVersion: "2.3.2"
+version: 0.0.2
+appVersion: "2.5.1"
 home: https://github.com/efomat/openshift-airflow
 maintainers:
 - name: eformat
