@@ -97,7 +97,7 @@ The default random values are:
     POSTGRESQL_DATABASE="bitnami_airflow"
     REDIS_PASSWORD="ad2a251b"
     AIRFLOW_PASSWORD="f816c493"
-    AIRFLOW_FERNETKEY="LbqumqMCI20kRt2Bt2QsQA2urRs28XEM"
+    AIRFLOW_FERNETKEY="SJbwFs6Ms6R5Gu8ek9BoJhJH9vEU6dVYZLWJcW1KBEY="
 ```
 
 Authentication for Airflow Web is **DISBALED** by default in the chart.
