@@ -1,7 +1,7 @@
 FROM localhost/airflow-base:latest
 
 ARG PYTHON_VERSION="3.8"
-ARG AIRFLOW_VERSION="2.3.2"
+ARG AIRFLOW_VERSION="2.5.1"
 ARG AIRFLOW_EXTRAS="crypto,celery,postgres,redis,hive,jdbc,ssh,papermill"
 
 USER 0
