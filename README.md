@@ -45,6 +45,18 @@ type: kubernetes.io/basic-auth
 EOF
 ```
 
+Airflow will error if the git repo contains symlinks (using the `git-sync` pod above) see this [issue](https://github.com/apache/airflow/issues/23532) which is not resolved in the latest release.
+
+To workaround this - simply add a `.airflowignore` file with the name of your git repo - to your dag repo. The symlink `git-sync` creates will then be ignored.
+
+```bash
+echo "# ignore the symlinked directory" > .airflowignore
+echo "my-dags.git" >> .airflowignore
+git add .aiflowignore
+git commit -m "add ignorefile"
+git push
+```
+
 ### Deploying to OpenShift using helm
 
 Add the following helm chart repo.
