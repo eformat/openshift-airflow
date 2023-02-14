@@ -2,7 +2,7 @@ FROM localhost/airflow-base:latest
 
 ARG PYTHON_VERSION="3.8"
 ARG AIRFLOW_VERSION="2.5.1"
-ARG AIRFLOW_EXTRAS="crypto,celery,postgres,redis,hive,jdbc,ssh,papermill"
+ARG AIRFLOW_EXTRAS="crypto,celery,postgres,redis,hive,jdbc,ssh,papermill,kubernetes"
 
 USER 0
 RUN dnf install -y https://download-ib01.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/c/crudini-0.9.3-1.el8.noarch.rpm && \
